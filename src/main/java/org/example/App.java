@@ -80,7 +80,7 @@ public class App
         System.out.println("please enter letter E to end the game or any other key to start a new game");
         Scanner input = new Scanner(System.in);
         String inputStr = input.nextLine();
-        if (inputStr.toUpperCase().equals("E")) {
+        if (inputStr.equalsIgnoreCase("E")) {
             System.exit(0);
         }
     }
