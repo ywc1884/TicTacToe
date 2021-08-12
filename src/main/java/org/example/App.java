@@ -11,7 +11,8 @@ public class App
 {
     public static void main( String[] args ) {
         try {
-            TicTacToe ticTacToe = new TicTacToe();
+//            TicTacToe ticTacToe = new TicTacToe();
+            TicTacToeV2 ticTacToe = new TicTacToeV2();
 
             System.out.println("This is the Tic-Tac-Toe game and we have 2 players, " +
                     "You need to enter the row and col number to place your symbol, " +
@@ -19,7 +20,6 @@ public class App
             boolean player1Turn = true;
 
             while (true) {
-
                 int playerNumber = player1Turn? 1: 2;
                 int row = -1;
                 int col = -1;
@@ -55,7 +55,7 @@ public class App
                 if (moveResult == -1) {
                     System.out.println("the place is already taken, please re-enter a vacant position");
                 } else if (moveResult == 1 || moveResult == 2) {
-                    System.out.println("Player" + moveResult + "wins, please press enter to start another round of game");
+                    System.out.println("Player" + moveResult + " wins, please press enter to start another round of game");
                     //prints the current board
                     ticTacToe.printBoard();
                     gameEndProcess();
@@ -65,6 +65,7 @@ public class App
                     //prints the current board
                     ticTacToe.printBoard();
                     gameEndProcess();
+                    ticTacToe.clearBoard();
                 } else if (moveResult == 0) {
                     player1Turn = !player1Turn;
                     //prints the current board
